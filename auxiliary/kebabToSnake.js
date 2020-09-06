@@ -1,20 +1,32 @@
 const str = "hey-people-hello-to-you";
 
-const kebabToSnake = (str) => {
-  let snakeStr = "";
+//kebabToSnake is WRONG name! right name is 'kebabToCamel;
+
+const kebabToCamel = (str) => {
+  let camelStr = "";
   let i = 0;
+  let flag = false;
 
-  for (i = 0; i < str.length; i += 1) {
-    console.log(str[i]);
+  for (; i < str.length; i += 1) {
     if (str[i] === "-") {
-
-      snakeStr += str[i + 1].toLocaleUpperCase();
+      // camelStr += str[i + 1].toLocaleUpperCase();
+      flag = true;
+    } else if (flag === true) {
+      camelStr += str[i].toLocaleUpperCase();
+      flag = false;
     } else {
-      snakeStr += str[i];
+      camelStr += str[i];
     }
   }
 
-  return snakeStr;
+  return camelStr;
 };
 
-console.log(kebabToSnake(str));
+console.log(kebabToCamel(str));
+const test1 = kebabToCamel("hello-there");
+const test2 = kebabToCamel("-haha-hoho");
+const test3 = kebabToCamel("-magic-is-not-allowed-");
+
+console.log("hello-there-people becomes... :", test1); 
+console.log("-haha-hoho becomes... :", test2);
+console.log("-magic-is-not-allowed- becomes... :", test3);
