@@ -1,4 +1,4 @@
-// Напишите функцию ucFirst(str), возвращающую строку str с заглавным первым символом. 
+// Напишите функцию ucFirst(str), возвращающую строку str с заглавным первым символом.
 //Например: ucFirst("вася") == "Вася";
 
 const ucFirst = (str) => {
@@ -34,9 +34,28 @@ const checkSpam = (str) => {
   }
 };
 
-checkSpam("buy ViAgRA now") // true;
-checkSpam("free xxxxx") // true;
-checkSpam("innocent rabbit") // false;
+checkSpam("buy ViAgRA now"); // true;
+checkSpam("free xxxxx"); // true;
+checkSpam("innocent rabbit"); // false;
+
+// // -------------
+
+const checkSpam = (str) => {
+  let lowerCaseStr = str.toLowerCase();
+  if (
+    lowerCaseStr.indexOf("viagra", 0) !== -1 ||
+    lowerCaseStr.indexOf("xxx", 0) !== -1
+  ) {
+    return console.log(true);
+  } else {
+    return console.log(false);
+  }
+};
+
+
+checkSpam("buy ViAgRA now"); // true;
+checkSpam("free xxxxx"); // true;
+checkSpam("innocent rabbit"); // false;
 
 // // -------------
 
@@ -54,8 +73,8 @@ const truncate = (str, maxlength) => {
   }
 };
 
-console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20)); //"Вот, что мне хотело…"
-console.log(truncate("Всем привет!", 20)); //"Всем привет!"
+// console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20)); //"Вот, что мне хотело…"
+// console.log(truncate("Всем привет!", 20)); //"Всем привет!"
 
 // // -------------
 
