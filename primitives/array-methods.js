@@ -76,7 +76,7 @@ const descendingSort = (arr) => {
 // alert( arr ); // HTML, JavaScript, CSS (без изменений)
 
 const copySorted = (arr) => {
-  const copyArr = arr.concat();
+  const copyArr = arr.concat(); // или const copyArr = arr.slice()
   copyArr.sort();
   return copyArr;
 };
@@ -319,5 +319,19 @@ let strings = [
     }
     return uniqueArr;
   };
-  
+  ///////////////
+
+  const unique = (arr) => {
+    const uniqueObj = {};
+    arr.forEach(element => {
+      uniqueObj[element] = true;
+    });
+    return Object.keys(uniqueObj);
+  }
+
+  console.log(unique(strings));
+
+
+
+   
   /////////////////
