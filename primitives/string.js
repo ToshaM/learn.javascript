@@ -43,8 +43,8 @@ checkSpam("innocent rabbit"); // false;
 const checkSpam = (str) => {
   let lowerCaseStr = str.toLowerCase();
   if (
-    lowerCaseStr.indexOf("viagra", 0) !== -1 ||
-    lowerCaseStr.indexOf("xxx", 0) !== -1
+    lowerCaseStr.indexOf("viagra") !== -1 ||
+    lowerCaseStr.indexOf("xxx") !== -1
   ) {
     return console.log(true);
   } else {
